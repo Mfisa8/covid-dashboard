@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Early Outbreak Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+<header>
+    <h1>COVID-19 Early Outbreak Dashboard</h1>
+    <p>February – March 2020 | Historical Analysis</p>
+</header>
+
+<main>
+    <section class="filters">
+        <label for="countrySelect">Select Country:</label>
+        <select id="countrySelect" disabled>
+            <option>Loading...</option>
+        </select>
+
+        <label for="startDate">From:</label>
+        <input type="date" id="startDate" value="2020-02-01">
+
+        <label for="endDate">To:</label>
+        <input type="date" id="endDate" value="2020-03-31">
+
+        <button id="resetDates">Reset dates</button>
+    </section>
+
+    <p id="status">Loading dataset...</p>
+
+    <section class="metrics">
+        <div class="card">
+            <h3>Confirmed Cases</h3>
+            <p id="confirmed">—</p>
+        </div>
+        <div class="card">
+            <h3>Deaths</h3>
+            <p id="deaths">—</p>
+        </div>
+        <div class="card">
+            <h3>Recoveries</h3>
+            <p id="recovered">—</p>
+        </div>
+        <div class="card">
+            <h3>Active Cases</h3>
+            <p id="active">—</p>
+        </div>
+    </section>
+
+    <section class="chart-card">
+        <h2>Cumulative COVID-19 Cases</h2>
+        <canvas id="trendChart"></canvas>
+    </section>
+
+    <section class="chart-card">
+        <h2>Change in Confirmed Cases Between Observations</h2>
+        <canvas id="dailyChart"></canvas>
+    </section>
+</main>
+
+<footer>
+    COVID-19 Early Outbreak Dashboard | 2020 Historical Dataset
+</footer>
+</body>
+</html>
