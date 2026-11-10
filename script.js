@@ -65,10 +65,11 @@ function updateDashboard() {
         .filter(r => r.date >= start && r.date <= end);
 
     if (records.length === 0) {
-        ["confirmed", "deaths", "recovered", "active"]
-            .forEach(id => {
-                document.getElementById(id).textContent = "—";
-            });
+    for (const id of ["confirmed", "deaths", "recovered", "active"]) {
+        const element = document.getElementById(id);
+        element.textContent = "—";
+    }
+}
 
         if (trendChart) trendChart.destroy();
         if (dailyChart) dailyChart.destroy();
